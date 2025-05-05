@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spotify Redirect</title>
+</head>
+<body>
+  Redirecting…
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code  = params.get("code");
+    const state = params.get("state");
+
+    if (code) {
+      window.location.href = `http://127.0.0.1:8888/callback/?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state)}`;
+    } else {
+      document.body.innerText = "Authorization failed or canceled.";
+    }
+  </script>
+</body>
+</html>
