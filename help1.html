@@ -11,7 +11,7 @@
 
     // Редирект на локальный сервер
     if (code) {
-      window.location.href = `http://localhost:8888/callback/?code=${code}&state=${state}`;
+      window.location.href = `http://127.0.0.1:8888/callback/?code=${code}&state=${state}`;
     } else {
       document.body.innerText = "Authorization failed or canceled.";
     }
